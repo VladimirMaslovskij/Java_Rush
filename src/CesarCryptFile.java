@@ -27,7 +27,7 @@ public class CesarCryptFile
         for (int i =0; i < unencryptedFile.size(); i++) {
             for (int j = 0; j < cyrillicTemplate.size(); j++) {
                 if (unencryptedFile.get(i).equals(cyrillicTemplate.get(j))) {
-                    encryptedFile.add(cyrillicTemplate.get((j + key) % 94));
+                    encryptedFile.add(cyrillicTemplate.get((j + key) % 93));
                     continue;
                 } else if (encryptedFile.size() == i && j+1 == cyrillicTemplate.size()) {
                     encryptedFile.add(unencryptedFile.get(i));

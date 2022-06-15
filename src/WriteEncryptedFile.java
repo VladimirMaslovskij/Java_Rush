@@ -14,9 +14,10 @@ public class WriteEncryptedFile {
 
     void writeEncryptedFile(Scanner scanner, ArrayList<Character> encryptedDoc) {
         try {
+            encryptedDoc.clear();
             Path outPath = inputFilePath(scanner);
             Files.createFile(outPath);
-            try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(String.valueOf(outPath)));) {
+            try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(String.valueOf(outPath)))) {
                 for (Character character : encryptedDoc) {
                     bufferedWriter.write(character);
                     bufferedWriter.flush();

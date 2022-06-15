@@ -26,7 +26,8 @@ public class DecodeFile {
         for (int i = 0; i < encryptedDoc.size(); i++) {
             for (int j = 0; j < cyrillicTemplate.size(); j++) {
                 if (encryptedDoc.get(i).equals(cyrillicTemplate.get(j))) {
-                    unencryptedFile.add(cyrillicTemplate.get(Math.abs(j-(key%94))));
+                    int offset = j -key;
+                    unencryptedFile.add(cyrillicTemplate.get(((offset%93)+93)%93));
                     continue;
                 } else if (unencryptedFile.size() == i && j + 1 == cyrillicTemplate.size()) {
                     unencryptedFile.add(encryptedDoc.get(i));
