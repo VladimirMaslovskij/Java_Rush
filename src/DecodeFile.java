@@ -20,9 +20,6 @@ public class DecodeFile {
             scanner.nextLine();
         }
         unencryptedFile.clear();
-        if(key >= 86 && key <=95){
-            key += 155;
-        }
         for (int i = 0; i < encryptedDoc.size(); i++) {
             for (int j = 0; j < cyrillicTemplate.size(); j++) {
                 if (encryptedDoc.get(i).equals(cyrillicTemplate.get(j))) {

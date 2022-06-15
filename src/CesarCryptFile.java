@@ -21,9 +21,6 @@ public class CesarCryptFile
             scanner.nextLine();
         }
         encryptedFile.clear();
-        if(key >= 86 && key <=95){
-            key += 155;
-        }
         for (int i =0; i < unencryptedFile.size(); i++) {
             for (int j = 0; j < cyrillicTemplate.size(); j++) {
                 if (unencryptedFile.get(i).equals(cyrillicTemplate.get(j))) {
