@@ -7,8 +7,8 @@ public class MenuController {
     private static final Character[] ALPHABET_RUS = {'А', 'а','Б','б', 'В','в','Г','г', 'Д','д', 'Е','е', 'Ё','ё', 'Ж','ж', 'З','з', 'И','и',
             'Й','й', 'К','к', 'Л','л', 'М','м', 'Н','н', 'О','о', 'П','п', 'Р','р', 'С','с', 'Т','т', 'У','у', 'Ф','ф', 'Х','х',
             'Ц','ц', 'Ч','ч', 'Ш','ш', 'Щ','щ', 'Ъ','ъ', 'Ы','ы', 'Ь','ь', 'Э','э', 'Ю','ю', 'Я','я',
-            '.', ',', '"', '”', ':', '-', '!', '?', '_', ' ', '(', ')', ';','@','+','#','№','`',
-            '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'};
+            '.', ',', '"', '”', ':', '-', '!', '?', '_', '(', ')', ';','@','+','#','№','`',
+            '1', '2', '3', '4', '5', '6', '7', '8', '9', '0',' '};
     private static final UserInput userInput = new UserInput();
     private static final Menu menu = new Menu();
     private static final ReadFile readFile = new ReadFile();
@@ -38,7 +38,7 @@ public class MenuController {
                 case 4 -> cesarCryptFile.printEncryptedDocument(encryptedDoc);
                 case 5 -> writeEncryptedFile.writeEncryptedFile(scanner, encryptedDoc);
                 case 6 -> writeEncryptedFile.readEncryptedFile(scanner,encryptedDoc);
-                case 7 -> unencryptedFile = DecodeFile.cesarDecoder(scanner, encryptedDoc, cyrillicTemplate);
+                case 7 -> unencryptedFile = decodeFile.cesarDecoder(scanner, encryptedDoc, cyrillicTemplate);
                 case 8 -> System.out.println("Выбран пункт 8");
                 case 9 -> System.out.println("Выбран пункт 9");
             }

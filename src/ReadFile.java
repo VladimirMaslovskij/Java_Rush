@@ -9,16 +9,19 @@ import java.util.Scanner;
 public class ReadFile {
     ArrayList<Character> fileReader(Scanner scanner, ArrayList<Character> unencryptedFile) {
         boolean successReadingFile = true;
+        Path path = null;
             try {
+                unencryptedFile.clear();
                 scanner.nextLine();
                 System.out.print("Введите путь к файлу :");
-                Path path = Path.of(scanner.nextLine());
+                path = Path.of(scanner.nextLine());
                 BufferedReader bufferedReader = new BufferedReader(new FileReader(String.valueOf(path)));
                 while (bufferedReader.ready()) {
                     unencryptedFile.add((char) bufferedReader.read());
                 }
             } catch (FileNotFoundException e) {
                 System.out.println("<------Файл_Не_Найден!----->");
+                System.out.println(path.toAbsolutePath());
                 successReadingFile = false;
             } catch (IOException e) {
                 System.out.println("<-----Ошибка_Чтения_Файла!----->");

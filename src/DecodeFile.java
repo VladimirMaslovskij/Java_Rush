@@ -3,8 +3,8 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class DecodeFile {
-    private static final ArrayList<Character> unencryptedFile = new ArrayList<>();
-    static ArrayList<Character> cesarDecoder(Scanner scanner, ArrayList<Character> encryptedDoc
+    private final ArrayList<Character> unencryptedFile = new ArrayList<>();
+     ArrayList<Character> cesarDecoder(Scanner scanner, ArrayList<Character> encryptedDoc
             , ArrayList<Character> cyrillicTemplate) {
         int key = 0;
         try {
@@ -33,12 +33,12 @@ public class DecodeFile {
                 }
             }
         }
-        System.out.println("-----Расшифрованный_Файл----->");
+        System.out.println("<-----Расшифрованный_Файл----->");
         for (Character character:unencryptedFile){
             System.out.print(character);
         }
         System.out.println();
-        System.out.println("-----Расшифрованный_Файл----->");
+        System.out.println("<-----Расшифрованный_Файл----->");
         return unencryptedFile;
     }
 }
