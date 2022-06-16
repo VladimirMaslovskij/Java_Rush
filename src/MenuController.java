@@ -13,11 +13,13 @@ public class MenuController {
     private static final ReadFile readFile = new ReadFile();
     private static final WriteEncryptedFile writeEncryptedFile = new WriteEncryptedFile();
     private static final DecodeFile decodeFile = new DecodeFile();
+    private static final BruteForceDecode bruteForceDecode = new BruteForceDecode();
     private static final CesarCryptFile cesarCryptFile = new CesarCryptFile();
+
     private static ArrayList<Character> unencryptedFile = new ArrayList<>();
     private static ArrayList<Character> encryptedDoc = new ArrayList<>();
     private static final ArrayList<Character> cyrillicTemplate = new ArrayList<>();
-    static void setCyrillicTemplate(){
+    private static void setCyrillicTemplate(){
         cyrillicTemplate.addAll(Arrays.asList(ALPHABET_RUS));
     }
 
@@ -37,8 +39,8 @@ public class MenuController {
                 case 4 -> cesarCryptFile.printEncryptedDocument(encryptedDoc);
                 case 5 -> writeEncryptedFile.writeEncryptedFile(scanner, encryptedDoc);
                 case 6 -> writeEncryptedFile.readEncryptedFile(scanner,encryptedDoc);
-                case 7 -> unencryptedFile = decodeFile.cesarDecoder(scanner, encryptedDoc, cyrillicTemplate);
-                case 8 -> System.out.println("Выбран пункт 8");
+                case 7 -> unencryptedFile = decodeFile.cesarDecoder(scanner, encryptedDoc, cyrillicTemplate,unencryptedFile);
+                case 8 -> unencryptedFile = bruteForceDecode.bruteForceDecode(unencryptedFile,cyrillicTemplate,encryptedDoc);
                 case 9 -> System.out.println("Выбран пункт 9");
             }
         }

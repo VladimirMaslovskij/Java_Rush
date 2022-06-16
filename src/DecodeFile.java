@@ -3,9 +3,10 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class DecodeFile {
-    private final ArrayList<Character> unencryptedFile = new ArrayList<>();
-     ArrayList<Character> cesarDecoder(Scanner scanner, ArrayList<Character> encryptedDoc
-            , ArrayList<Character> cyrillicTemplate) {
+     ArrayList<Character> cesarDecoder(Scanner scanner
+             , ArrayList<Character> encryptedDoc
+             , ArrayList<Character> cyrillicTemplate
+             , ArrayList<Character> unencryptedFile) {
         int key = 0;
         try {
             System.out.print("Введите ключ :");
@@ -25,7 +26,6 @@ public class DecodeFile {
                 if (encryptedDoc.get(i).equals(cyrillicTemplate.get(j))) {
                     int offset = j -key;
                     unencryptedFile.add(cyrillicTemplate.get(((offset%93)+93)%93));
-                    continue;
                 } else if (unencryptedFile.size() == i && j + 1 == cyrillicTemplate.size()) {
                     unencryptedFile.add(encryptedDoc.get(i));
                 }
