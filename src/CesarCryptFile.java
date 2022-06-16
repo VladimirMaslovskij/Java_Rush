@@ -10,7 +10,7 @@ public class CesarCryptFile
         int key = 0;
         try {
             System.out.print("Введите ключ :");
-            key = scanner.nextInt();
+            key =Math.abs(scanner.nextInt());
         }catch (InputMismatchException e) {
             System.out.println("""
                         ____________________

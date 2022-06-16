@@ -14,7 +14,6 @@ public class WriteEncryptedFile {
 
     void writeEncryptedFile(Scanner scanner, ArrayList<Character> encryptedDoc) {
         try {
-            encryptedDoc.clear();
             Path outPath = inputFilePath(scanner);
             Files.createFile(outPath);
             try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(String.valueOf(outPath)))) {
@@ -42,6 +41,8 @@ public class WriteEncryptedFile {
                 while (bufferedReader.ready()) {
                     encryptedDoc.add((char) bufferedReader.read());
                 }
+                if(Files.exists(outPath)&& encryptedDoc.size() !=0)
+                    System.out.println("<------Файл_Успешно_Считан----->");
                 System.out.println("<-------Файл для дешифровки----->");
                 System.out.println(outPath.toAbsolutePath());
                 System.out.println("---------------------------------");
