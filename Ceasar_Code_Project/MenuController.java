@@ -2,7 +2,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class MenuController {
+public class MenuController
+{
     private static final Character[] ALPHABET_RUS = {'А', 'а', 'Б', 'б', 'В', 'в', 'Г', 'г', 'Д', 'д', 'Е', 'е', 'Ё', 'ё', 'Ж', 'ж', 'З', 'з', 'И', 'и',
             'Й', 'й', 'К', 'к', 'Л', 'л', 'М', 'м', 'Н', 'н', 'О', 'о', 'П', 'п', 'Р', 'р', 'С', 'с', 'Т', 'т', 'У', 'у', 'Ф', 'ф', 'Х', 'х',
             'Ц', 'ц', 'Ч', 'ч', 'Ш', 'ш', 'Щ', 'щ', 'Ъ', 'ъ', 'Ы', 'ы', 'Ь', 'ь', 'Э', 'э', 'Ю', 'ю', 'Я', 'я',
@@ -24,13 +25,16 @@ public class MenuController {
     }
 
 
-    static void menuController(Scanner scanner) {
+    static void menuController(Scanner scanner)
+    {
         boolean isExit = false;
-        while (!isExit) {
+        while (!isExit)
+        {
             menu.mainMenu();
             System.out.print("Выберите пункт меню :");
-            int userSelectedMenuItem = userInput.userInput(scanner);
-        switch(userSelectedMenuItem) {
+            int userSelectedMenuItem = userInput.getUserInput(scanner);
+        switch(userSelectedMenuItem)
+        {
                 case 0 -> {System.out.println("<-----До свидания!----->");
                         isExit = true ;}
                 case 1 -> unencryptedFile = readFile.fileReader(scanner, unencryptedFile);
@@ -46,8 +50,10 @@ public class MenuController {
         }
     }
 
-    public static void main(String[] args) {
-        try (Scanner scanner = new Scanner(System.in)) {
+    public static void main(String[] args)
+    {
+        try (Scanner scanner = new Scanner(System.in))
+        {
             setCyrillicTemplate();
             menuController(scanner);
         }

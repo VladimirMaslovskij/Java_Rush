@@ -1,12 +1,16 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class UserInput {
-    int userInput = -1;
-    int userInput(Scanner scanner) {
-            try {
+public class UserInput
+{
+    private int userInput = -1;
+    private int userInput(Scanner scanner)
+    {
+            try
+            {
                 userInput = scanner.nextInt();
-                if (userInput < 0 || userInput > 9) {
+                if (userInput < 0 || userInput > 9)
+                {
                     System.out.println("""
                             <-------------------->
                              Некорректный ввод!
@@ -14,7 +18,8 @@ public class UserInput {
                             <-------------------->
                             """);
                 }
-            } catch (InputMismatchException e) {
+            } catch (InputMismatchException e)
+            {
                 System.out.println("""
                         <-------------------->
                         Некорректный ввод!
@@ -24,5 +29,10 @@ public class UserInput {
                 scanner.nextLine();
             }
         return userInput;
+    }
+
+    public int getUserInput(Scanner scanner)
+    {
+        return userInput(scanner);
     }
 }

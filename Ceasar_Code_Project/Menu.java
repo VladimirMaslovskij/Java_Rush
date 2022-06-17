@@ -1,8 +1,10 @@
 /* Добавляя или удаляя пункты меню измените условия в
 классе UserInput и MenuController.
  */
-class Menu {
-     void mainMenu(){
+class Menu
+{
+     void mainMenu()
+     {
         System.out.println("\nДобро пожаловать в программу шифровки и дешифровки текста!");
         System.out.println("""
                 1 - Считать файл для шифрования.
