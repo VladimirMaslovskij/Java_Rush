@@ -6,12 +6,15 @@ public class CesarCryptFile
 {
     private static final ArrayList<Character> encryptedFile = new ArrayList<>();
     ArrayList<Character> cesarСipher(Scanner scanner,ArrayList<Character> unencryptedFile,
-                                             ArrayList<Character> cyrillicTemplate) {
+                                             ArrayList<Character> cyrillicTemplate)
+    {
         int key = 0;
-        try {
+        try
+        {
             System.out.print("Введите ключ :");
             key =Math.abs(scanner.nextInt());
-        }catch (InputMismatchException e) {
+        }catch (InputMismatchException e)
+        {
             System.out.println("""
                         ____________________
                         Некорректный ключ!
@@ -21,12 +24,16 @@ public class CesarCryptFile
             scanner.nextLine();
         }
         encryptedFile.clear();
-        for (int i =0; i < unencryptedFile.size(); i++) {
-            for (int j = 0; j < cyrillicTemplate.size(); j++) {
-                if (unencryptedFile.get(i).equals(cyrillicTemplate.get(j))) {
+        for (int i =0; i < unencryptedFile.size(); i++)
+        {
+            for (int j = 0; j < cyrillicTemplate.size(); j++)
+            {
+                if (unencryptedFile.get(i).equals(cyrillicTemplate.get(j)))
+                {
                     encryptedFile.add(cyrillicTemplate.get((j + key) % 93));
                     continue;
-                } else if (encryptedFile.size() == i && j+1 == cyrillicTemplate.size()) {
+                } else if (encryptedFile.size() == i && j+1 == cyrillicTemplate.size())
+                {
                     encryptedFile.add(unencryptedFile.get(i));
                 }
             }
@@ -35,10 +42,12 @@ public class CesarCryptFile
             System.out.println("<-----Документ успешно зашифрован----->");
         return encryptedFile;
     }
-    void printEncryptedDocument(ArrayList<Character> encryptedFile){
+    void printEncryptedDocument(ArrayList<Character> encryptedFile)
+    {
         System.out.println("<-----Encoded_Document----->");
         System.out.println();
-        for (Character character:encryptedFile) {
+        for (Character character:encryptedFile)
+        {
             System.out.print(character);
         }
         System.out.println();
