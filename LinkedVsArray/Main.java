@@ -1,3 +1,4 @@
+//I do not use getters and setters. I am lazy);
 public class Main
 {
     public static final String YELLOW = "\u001B[33m";

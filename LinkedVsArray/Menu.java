@@ -8,16 +8,19 @@ public class Menu {
         try
         {
             System.out.print("Input size of testing array : ");
-            size = scanner.nextInt();
-            if(size <= Integer.MIN_VALUE || size >= Integer.MAX_VALUE )
+            size = Math.abs(scanner.nextInt());
+            if(size > 10000000 )
             {
                 System.out.println("Too much for compare");
                 menu();
             }
-        } catch (InputMismatchException e) {
+        } catch (InputMismatchException e)
+        {
             System.out.println("Input number");
             scanner.nextLine();
              menu();
+        }finally {
+            scanner.close();
         }
         return size;
     }
