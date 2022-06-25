@@ -1,5 +1,3 @@
-import java.awt.*;
-
 public class Main
 {
     public static final String YELLOW = "\u001B[33m";
@@ -17,14 +15,14 @@ public class Main
         System.out.println("LinkedList -> :"+linkedListTest.createLinkedList(size) + " ns"
                 + "\n ArrayList -> :" + ArrayListTest.createArrayList(size) + " ns");
         if (linkedListTest.createLinkedList(size)>ArrayListTest.createArrayList(size))
-            System.out.println(YELLOW + "LinkedList is winner" + RESET);
-        else System.out.printf(YELLOW + "ArrayList is better" + RESET);
+            System.out.println(YELLOW + "LinkedList is slower" + RESET);
+        else System.out.printf(YELLOW + "LinkedList is faster" + RESET);
         System.out.println("<-----Time_to_Add_First_Element_To_LinkedList_Vs_ArrayList----->");
         System.out.println("LinkedList -> :"+linkedListTest.addElementToStartLinkedList() + " ns"
-                + " ArrayList -> :" + arrayListTest.addElementToStartArrayList() + " ns");
+                + "\n ArrayList -> :" + arrayListTest.addElementToStartArrayList() + " ns");
         if (linkedListTest.createLinkedList(size)>ArrayListTest.createArrayList(size))
-            System.out.println(YELLOW + "LinkedList is winner" + RESET);
-        else System.out.printf(YELLOW + "ArrayList is better" + RESET);
+            System.out.println(YELLOW + "LinkedList is slower" + RESET);
+        else System.out.printf(YELLOW + "LinkedList is faster" + RESET);
         System.out.println("\n<-----Time_to_Add_Last_Element_To_LinkedList_Vs_ArrayList----->");
         System.out.println("LinkedList -> :"+linkedListTest.addElementToEndLinkedList(size) + " ns"
                 + "\n ArrayList -> :" + arrayListTest.addElementToEndArrayList(size) + " ns");
